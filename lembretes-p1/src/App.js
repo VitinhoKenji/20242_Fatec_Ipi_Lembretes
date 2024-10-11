@@ -8,17 +8,20 @@ export default class App extends React.Component {
     lembretes: []
   };
 
+
   adicionarLembrete = (lembrete) => {
-    this.setState((prevState) => ({
-      lembretes: [...prevState.lembretes, lembrete]
-    }));
-  };
+    const lembretes = this.state.lembretes
+    this.setState({
+      lembretes: [...lembretes, lembrete]
+    })
+  }
 
   render() {
     return (
-      <div className="container p-4">
+      <div className="container p-5">
         <div className="row justify-content-center">
-          <div className="col-sm-12 col-md-8">
+          <div className="col-sm-12 col-md-8 col-lg-6">
+            <h1 className="text-center mb-4">Lista de Lembretes</h1>
             <LembreteEntrada adicionarLembrete={this.adicionarLembrete} />
             <LembreteLista lembretes={this.state.lembretes} />
           </div>
