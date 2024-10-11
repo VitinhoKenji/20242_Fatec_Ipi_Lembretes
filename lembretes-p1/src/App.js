@@ -5,7 +5,7 @@ import LembreteLista from './LembreteLista';
 
 export default class App extends React.Component {
   state = {
-    lembretes: ['Estudar React', 'Praticar JavaScript', 'Criar portfólio']
+    lembretes: []
   };
 
   adicionarLembrete = (lembrete) => {
