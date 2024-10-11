@@ -1,10 +1,11 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LembreteEntrada from './LembreteEntrada';
+import LembreteLista from './LembreteLista';
 
 export default class App extends React.Component {
   state = {
-    lembretes: []
+    lembretes: ['Estudar React', 'Praticar JavaScript', 'Criar portfólio']
   };
 
   adicionarLembrete = (lembrete) => {
@@ -19,6 +20,7 @@ export default class App extends React.Component {
         <div className="row justify-content-center">
           <div className="col-sm-12 col-md-8">
             <LembreteEntrada adicionarLembrete={this.adicionarLembrete} />
+            <LembreteLista lembretes={this.state.lembretes} />
           </div>
         </div>
       </div>
